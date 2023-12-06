@@ -1,0 +1,29 @@
+
+# Course overview {.unnumbered}
+
+This course is specifically designed for those new to R, aiming to facilitate a transition from software platforms like `STATA` or `Excel`. It's an introductory course, ideal for beginners without prior R experience. If you're already acquainted with R, this course may revisit concepts you know, but you're welcome to take for a fundamentals refresher. While it's not a comprehensive guide to R and RStudio, nor a course on statistics, data analysis, programming, or computer science, it provides a solid foundation in R and RStudio for beginners. Keep an eye out for our future courses on basic statistical analysis and data manipulation.
+
+# Aims {#Aims}
+
+1. Introduce R and RStudio to learners.
+2. Guide through R and RStudio installation, including R package management.
+3. Teach essential R syntax, operations, and R Markdown usage.
+4. Equip learners to handle R data structures for analysis tasks.
+5. Engage and actively involve learners throughout the course.
+
+
+# Learning Objectives {#Learning-Objectives}
+
+Upon successful completion of this course, you'll gain proficiency in R programming with these key abilities:
+
+1. Understand R's fundamentals and the RStudio IDE.
+2. Install R and RStudio effortlessly.
+3. Master R syntax, including variables, vectors, and basic operations.
+4. Utilize R Markdown for documentation.
+5. Handle vectors effectively and explore data frames and lists.
+6. Navigate R packages: installation, loading, and usage.
+7. Acquire skills in data import, visualization, and accessing help in RStudio.
+
+# Prerequisites {#Prerequisites}
+
+You would need a computer with an internet connection to access the course material. You can use any operating system (Windows, Mac, or Linux) to follow along with the course. However, we recommend using a Windows or Mac computer for the best experience. You'll also need to install R and RStudio on your computer. We'll cover this in the next section.

@@ -1,0 +1,345 @@
+---
+execute: 
+  warning: false
+---
+
+# Data Frames and Lists {#sec-df-lists}
+
+
+```{r setup}
+#| include: false
+#| eval: true
+source(here::here("R/functions.R"))
+source(here::here("R/load-packages.R"))
+```
+
+
+
+
+## Introduction to Data Frames
+
+Data frames are one of the most important data structures in R, especially for data analysis and statistical modeling. They are used to store tabular data, which is data that's organized in rows and columns, much like a spreadsheet or a database table. Each `column` in a data frame represents a unique `variable`, and each `row `represents an unique  `observation`.
+
+### Why Do We Need Data Frames?
+
+1. **Organized Storage**: Data frames allow for the organized storage of data where you can have different types of variables (e.g., numeric, character, logical) all in one place.
+2. **Easy Manipulation**: They provide a structured way to manipulate data, making it easier to perform operations on groups of data.
+3. **Compatibility**: Many R functions and packages are designed to work with data frames, making them a standard for working with data in R.
+
+### How Does R Handle Data Frames?
+
+- **Column-Based Structure**: R stores data frames in a column-based structure, which makes it efficient to access and manipulate entire columns of data.
+- **Different Data Types**: Unlike matrices, data frames can have columns of different data types.
+- **Named Columns and Rows**: The columns and rows in a data frame can have names, which is useful for data indexing and retrieval.
+
+## Example of a dataframe
+```{r echo=FALSE}
+# Example data frame
+fruits <- data.frame(
+  Name = c("Apple", "Banana", "Cherry", "Dragon fruit", "Mango"),
+  Color = c("Red", "Yellow", "Red", "Pink-red", "Yellow"),
+  Price_Per_Pound = c(1.2, 0.5, 2.5, 2, 3),
+  origin=c("USA", "S Africa", "Japan", "India", "Pakistan")
+)
+
+# Printing the data frame
+print(fruits)
+
+```
+A dataframe of [5 rows × 4 columns]
+
+
+## Working with Data Frames
+
+Working with data frames in R is straightforward. You can:
+
+- **Create** a data frame using the `data.frame()` function.
+
+- **Access** columns using the `$` operator or by indexing with `[]`.
+
+- **Modify** data frames by adding or removing columns or rows.
+
+- **Subset** data frames based on conditions.
+
+
+**Create**
+```{r}
+students <- data.frame(
+  Name = c("Alice", "Bob", "Charlie"),
+  Age = c(24, 27, 22),
+  Major = c("Biology", "Math", "Physics"),
+  GPA = c(3.8, 3.2, 3.9)
+)
+
+students
+```
+
+**Access**
+```{r}
+students$Name # access the Names of the students
+```
+
+:::{.callout-tip}
+When you press the dollar sign ($) while coding in R, a helpful autocomplete feature pops up. This tool suggests column names for you to choose from, which can be particularly useful when dealing with columns that have long names, reducing the risk of typos that could cause errors. To take advantage of this, simply scroll through the suggestions, select the desired column name, and then press Ctrl + Enter to execute the code. It's a convenient shortcut that can save time and avoid mistakes.
+:::
+
+Can you access the information from all other columns one by one ??
+
+**Modify**
+The dollar sign ($) in R is used to access a column within a data frame. If you refer to a column name that doesn't exist, R will create a new column with that name and assign values to it, as demonstrated below.
+```{r}
+# Adding a new column
+
+students$Graduation_Year <- c(2022, 2023, 2022)
+students
+```
+
+```{r}
+# Removing a column, setting it to NULL will remove the column
+students$Age <- NULL
+students
+```
+
+**Subset**
+
+The `==` Operator
+The equality operator == checks if the value on its left is equal to the value on its right and returns a logical/boolean value (TRUE if the values are equal, FALSE otherwise).
+It's important to note that == is for comparison, while = is often used for assignment (though in R, <- is the conventional assignment operator).
+```{r}
+# Filtering rows based on condition
+biology_students <- subset(students, Major == "Biology")
+biology_students
+```
+
+
+## Excercise 5
+
+Countries Analysis
+
+**Objective:**
+Gain hands-on experience with creating, modifying, and querying data frames in R.
+
+**Background:**
+Data frames are one of the most commonly used data structures in R. They are used to store tabular data and are similar to matrices but can contain different types of data.
+
+**Tasks:**
+
+1. **Create a Data Frame:**
+
+- Create a data frame named `countries_df` with the following columns: `Country`, `Continent`, `Population`, and `UN_Member` with following information.
+- Countries= Brazil, Sweden, India, Canada, Nigeria
+- Continent = South America, Europe, Asia, North America, Africa
+- Population_in_M = 212.6, 10.3, 1380, 37.7, 206
+- UN_Member = TRUE, TRUE, TRUE, TRUE, TRUE
+
+2. **Add New Information:**
+   - Add a new column to `countries_df` named `GDP_Per_Capita` (in USD).
+   - Populate this column with fictional or real GDP per capita figures for each country.
+
+3. **Data Cleanup:**
+   - Suppose you no longer need the `UN_Member` column. Remove this column from `countries_df`.
+
+5. **Analysis & Filtering:**
+   - Create a new data frame named `high_gdp_df` that only includes countries with a GDP per capita greater than $20,000.
+
+5. **Sorting:**
+   - Sort `high_gdp_df` in descending order based on the `GDP_Per_Capita` column.
+
+
+**Questions for Further Analysis:**
+
+1. Which continent is represented most among the countries with a high GDP per capita?
+2. Is there a correlation between the population of a country and its GDP per capita in your dataset? Hypothesize why this might be the case.
+
+
+:::{.callout-tip collapse="true" title="Excercise 5: Click to see solution"}
+
+```{r}
+countries_df <- data.frame(
+  Country = c('Brazil', 'Sweden', 'India', 'Canada', 'Nigeria'),
+  Continent = c('South America', 'Europe', 'Asia', 'North America', 'Africa'),
+  Population = c(212.6, 10.3, 1380, 37.7, 206),
+  UN_Member = c(TRUE, TRUE, TRUE, TRUE, TRUE)
+)
+```
+
+
+```{r}
+# Here, I am using example GDP per capita figures
+countries_df$GDP_Per_Capita <- c(57395, 8920, 46212, 59819, 3036)
+```
+
+
+```{r}
+countries_df <- subset(countries_df, select = -UN_Member)
+```
+
+```{r}
+high_gdp_df <- subset(countries_df, GDP_Per_Capita > 20000)
+```
+
+```{r}
+high_gdp_df <- high_gdp_df[order(-high_gdp_df$GDP_Per_Capita),]
+```
+:::
+
+## Working with Lists
+
+Lists in R are a powerful data structure that allows you to create a collection of elements under a single variable. These elements can be of any type, including numbers, strings, vectors, and even other lists. This flexibility makes lists particularly useful for organizing and managing complex data sets.
+
+
+Before we start creating lists lets first understand what are lists.
+
+Imagine you have a backpack where you can put all sorts of things: a water bottle, some books, a sandwich, and even another smaller bag with your gym clothes. In R, a list is like that backpack. You can put different things in it, like numbers, words, or even other backpacks (lists). And just like you can take things out of your backpack one at a time, you can do the same with a list in R.
+
+### Why Do We Need Lists?
+
+*Mix and Match:** You can have different types of things in a list. So if you're collecting different kinds of information, you can keep them all in one place.
+
+*Keep Things Organized:** Sometimes, you have stuff that belongs together, like a pair of socks. Lists let you keep things that belong together, close together.
+
+*They're Flexible:** You might have just a few things to carry one day, and a lot the next day. Lists can grow with you and can hold just a few things or lots of things, and it's easy to add or take away.
+
+*They Remember:** In a list, each spot has a name, like a pocket in your backpack. You can find what you need by remembering the pocket's name, so you don't have to dig through everything.
+
+In simple terms:
+Let's say you're going on a treasure hunt, and you have a map, a compass, some snacks, and a camera to take pictures of the treasure. You put all these in your backpack. In R, you would put all these into a list, and when you want to use your camera, you just say "Hey list, give me the camera!" and you're ready to snap photos.
+
+### Creating Lists
+
+To create a list, you can use the list() function. Here's an example:
+
+
+Notice that in the list we can add differnet types of data for example in the above example we added chracters, numeric and logical data
+
+```{r}
+my_list <- list(name = "Statistics", sections = 1:10, medium = "online", data = TRUE)
+```
+
+:::{.callout-note}
+Notice that the list is versatile, allowing the inclusion of various data types; for instance, in the above example, characters, numbers, and logical or Boolean values have been incorporated.
+:::
+
+### Accessing List Elements
+
+- You can access the elements of a list using double square brackets [[ ]] for a single element or the $ operator to access elements by name.
+
+```{r}
+my_list[[1]]
+my_list[[2]]
+my_list[[3]]
+```
+
+- Access elements by name
+
+```{r}
+my_list$name
+my_list$sections
+my_list$data
+```
+
+
+### Modifying Lists
+
+Lists can be modified after creation. You can change elements, add new ones, or remove existing ones.
+
+**Change the first element**
+```{r}
+my_list[[1]] <- "Learning R for begginers"
+
+```
+
+**Add a new element**
+```{r}
+my_list$new_element <- " Basic Statistics"
+```
+
+**Remove an element**
+```{r}
+my_list$data <- NULL
+```
+
+### Nested Lists
+Lists can contain other lists. This allows for the creation of complex structures known as nested lists.
+
+**Create a nested list**
+
+```{r}
+
+my_nested_list <- list(
+  course = my_list,
+  participants = list(names = c("Asieh", "Alice", "Bob", "Bil", "Fie", "Ria", "Mia"), count = 4)
+)
+
+
+my_nested_list
+
+```
+Lists are an incredibly versatile and important data structure in R. They can store collections of objects of various types and sizes, making them indispensable for handling complex data sets.
+
+## Exercise 6
+
+1. Create a list containing a numeric vector, a character vector, and a logical.
+2. Access and modify the second element of the list.
+3. Add a new boolean element to the list.
+4. Create a nested list 
+5. Access one of the inner list's elements 
+
+:::{.callout-tip collapse="true" title="Excercise 6: Click to see solution"}
+
+Step 1: Create a List
+
+```{r}
+# Create a list with a numeric vector, a character vector, and a logical vector
+my_list <- list(
+  numeric_vector = c(1, 2, 3, 4, 5),
+  character_vector = c("apple", "banana", "cherry"),
+  logical_vector = c(TRUE, FALSE, TRUE)
+)
+
+```
+
+
+Step 2: Access and Modify the Second Element of the List
+```{r}
+# Modify the second element of the list
+my_list$character_vector <- c("grape", "watermelon", "kiwi")
+
+```
+
+
+Step 3: Add a New Boolean Element to the List
+To add a new boolean element (TRUE or FALSE), you can simply assign it to a new element in the list:
+```{r}
+# Add a new boolean element to the list
+my_list$new_boolean <- TRUE
+```
+
+Step 4: Create a Nested List and Access an Element
+A nested list is a list within a list. Here's how you can create one and then access an element from the inner list:
+```{r}
+# Create a nested list
+my_list$nested_list <- list(
+  inner_numeric = c(10, 20, 30),
+  inner_character = c("red", "green", "blue")
+)
+```
+
+Step 5: Access inner elements
+```{r}
+# Access the first element of the inner numeric vector of the nested list
+inner_element <- my_list$nested_list$inner_numeric[1]
+
+```
+
+Print it to see the changes
+```{r}
+# Print the entire list to see the changes
+print(my_list)
+
+# Print the accessed inner element
+print(inner_element)
+```
+
+:::
+
