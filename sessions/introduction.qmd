@@ -164,10 +164,11 @@ how to install it:
     website](https://posit.co/download/rstudio-desktop/) to download
     RStudio.
 
-2.  **Download and Install**: Scrolle down and click on the blue button
-    `DOWNLOAD RSTUDIO DESKTOP FOR WINDOWS` / OR Scroll down more and
-    Select the version of RStudio that matches your operating system and
-    follow the installation instructions.
+2.  **Download and Install**: Scroll down and click on the blue button
+    that says `DOWNLOAD RSTUDIO DESKTOP FOR WINDOWS` / OR Scroll down
+    more and Select the version of RStudio that matches your operating
+    system and follow the installation instructions.
+    ![Rstudio](../images/posit-page.PNG)
 
 3.  **Accessing RStudio**: After installation, you can find RStudio in
     your computer's start menu. Open RStudio by navigating to the start
