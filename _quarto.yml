@@ -42,3 +42,6 @@ format:
       - "includes/contribute.html"
       - "includes/site-counter.html"
     theme: "cosmo"
+
+execute:
+  freeze: auto
