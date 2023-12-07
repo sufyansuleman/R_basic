@@ -43,5 +43,6 @@ format:
       - "includes/site-counter.html"
     theme: "cosmo"
 
+
 execute:
   freeze: auto
