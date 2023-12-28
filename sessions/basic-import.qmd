@@ -41,7 +41,7 @@ package are:
 -   Fast and user-friendly reading of CSV, TSV, and other delimited
     files.
 -   Produces tibble output, which is a modern approach to data frames in
-    R.
+    R.  
 -   Handles text and file connections, and can even read from compressed
     files directly.
 
@@ -605,5 +605,22 @@ outliers:
 airquality$Ozone[is.na(airquality$Ozone)] <- median(airquality$Ozone, na.rm = TRUE)
 ```
 
-\`\`\`{r}
+**Imputing with a Predictive Model**
+
+```{r}
+# Impute missing values in the Ozone column with a predictive model
+airquality$Ozone[is.na(airquality$Ozone)] <- predict(lm(Ozone ~ ., data = airquality), airquality)[is.na(airquality$Ozone)]
+```
+
+The above code uses a linear regression model to predict the missing
+Ozone values based on the other variables in the dataset. The lm()
+function is used to fit the linear regression model, and the predict()
+function is used to predict the missing values. The lm() function takes
+two arguments: the first is a formula specifying the model, and the
+second is the dataset. The predict() function takes two arguments: the
+first is the model, and the second is the dataset. The
+\[is.na(airquality\$Ozone)\] argument is used to specify that only the
+missing values should be predicted. The predict() function returns a
+vector of predicted values, which is then used to replace the missing
+values in the Ozone column.
 
