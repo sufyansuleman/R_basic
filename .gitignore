@@ -6,3 +6,4 @@ _site
 _build.qmd
 /.quarto/
 _book/
+renv/library
