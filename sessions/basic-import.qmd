@@ -9,29 +9,41 @@ iris <- read_csv(here::here("data/iris.csv"))
 
 ```
 
-::: {.callout-note collapse="true"}
-
 ## Introduction
 
-In this section, we explore importing data into R, focusing on the `readr` package. `readr` is part of the tidyverse, providing an efficient way to read tabular data like CSV and TSV files. There are many packages designed for specific type of data import. For example, `readxl` package is designed to read excel files, `haven` package is designed to read SAS, SPSS and Stata files. We will explore only `readr` package in the next section.
+In this section, we explore importing data into R, focusing on the
+`readr` package. `readr` is part of the tidyverse, providing an
+efficient way to read tabular data like CSV and TSV files. There are
+many packages designed for specific type of data import. For example,
+`readxl` package is designed to read excel files, `haven` package is
+designed to read SAS, SPSS and Stata files. We will explore only `readr`
+package in the next section.
 
 We will focus on the following topics:
 
-1. Understanding the basics of the `readr` package.
-2. Import data into R using `readr` functions.
-3. Explore the structure of imported data.
+1.  Understanding the basics of the `readr` package.
+2.  Import data into R using `readr` functions.
+3.  Explore the structure of imported data.
 
-::: {.callout-important}
-Please install and load the `readr` package before proceeding. If you have not done so already please follow the instructions in the previous section Exercise 9.
+::: callout-important
+Please install and load the `readr` package before proceeding. If you
+have not done so already please follow the instructions in the previous
+section Exercise 9.
 :::
 
 ### Key Features of `readr` package
 
-`readr` is part of the tidyverse suite in R and is designed to efficiently read and write tabular data. It is known for its simplicity and speed compared to base R functions. The key features of `readr` package are:
+`readr` is part of the tidyverse suite in R and is designed to
+efficiently read and write tabular data. It is known for its simplicity
+and speed compared to base R functions. The key features of `readr`
+package are:
 
-- Fast and user-friendly reading of CSV, TSV, and other delimited files.
-- Produces tibble output, which is a modern approach to data frames in R.
-- Handles text and file connections, and can even read from compressed files directly.
+-   Fast and user-friendly reading of CSV, TSV, and other delimited
+    files.
+-   Produces tibble output, which is a modern approach to data frames in
+    R.
+-   Handles text and file connections, and can even read from compressed
+    files directly.
 
 ### Importing data with `readr`
 
@@ -39,37 +51,48 @@ Please install and load the `readr` package before proceeding. If you have not d
 
 There are two primary methods for importing data into R:
 
-1 - From local file on a computer
-2 - From the Web directly
+1 - From local file on a computer 2 - From the Web directly
 
+I have generated simulated data similar to `iris` data set and saved it
+in the data folder on my computer. You can use the iris `data` available
+in R, OR read in any data in CSV or TSV file format.
 
-I have generated simulated data similar to `iris` data set and saved it in the data folder on my computer.
-You can use the iris `data` available in R, OR read in any data in CSV or TSV file format.
-
-::: {.callout-tip}
-`iris` data set is a famous real world data set that is available in R. It is a data set that contains information about iris. It contains 150 observations and 5 variables. The variables are sepal length, sepal width, petal length, petal width, and species. The species variable has three levels: setosa, versicolor, and virginica. The data set is available in R and can be loaded using the data() function. The data set is also available in CSV format on the internet.
+::: callout-tip
+`iris` data set is a famous real world data set that is available in R.
+It is a data set that contains information about iris. It contains 150
+observations and 5 variables. The variables are sepal length, sepal
+width, petal length, petal width, and species. The species variable has
+three levels: setosa, versicolor, and virginica. The data set is
+available in R and can be loaded using the data() function. The data set
+is also available in CSV format on the internet.
 :::
 
-We will use the simulated data set to demonstrate how to import data into R from a local file.
-
+We will use the simulated data set to demonstrate how to import data
+into R from a local file.
 
 **1- Importing data from local file**
 
 Important things to know before importing data from a local file
 
-- Import data from a local file
-- read_csv() function is used to read a csv file
-- read_csv() function takes the file path as an argument
-- The file path is the location of the file on your computer
-- The file path is a string, so it must be enclosed in quotes ""
-- The file path can be absolute  or relative 
-- Absolute file paths start with the root directory for example "(C:/projects/dir1/dir2/learnR/data/)", C is root directory here
-- Relative file paths start with the current working directory "data/"
-- The working directory is the default location where R looks for files
-- You can check the current working directory using the getwd() function
-- You can change the working directory using the setwd() function
+-   Import data from a local file
+-   read_csv() function is used to read a csv file
+-   read_csv() function takes the file path as an argument
+-   The file path is the location of the file on your computer
+-   The file path is a string, so it must be enclosed in quotes ""
+-   The file path can be absolute or relative
+-   Absolute file paths start with the root directory for example
+    "(C:/projects/dir1/dir2/learnR/data/)", C is root directory here
+-   Relative file paths start with the current working directory "data/"
+-   The working directory is the default location where R looks for
+    files
+-   You can check the current working directory using the getwd()
+    function
+-   You can change the working directory using the setwd() function
 
-In this example, we'll use the variable name iris. Remember, you'll need to provide the file path on your computer. By doing this, the data will be loaded into R and assigned to the variable iris. You also get a brief summary of the data set.
+In this example, we'll use the variable name iris. Remember, you'll need
+to provide the file path on your computer. By doing this, the data will
+be loaded into R and assigned to the variable iris. You also get a brief
+summary of the data set.
 
 ```{r}
 # Import data from local file
@@ -77,24 +100,31 @@ iris <- readr::read_csv("../data/iris.csv")
 
 ```
 
-:::{.callout-tip collapse="true" title="Want to know what the description means?"}
-- The first line of the output tells you that the data set has 150 rows and 5 columns.
-- The second line tells you the data is comma separated.
-- The third line tells you to one column names "species" contains data of type character.
-- The fourth line tells you that the other four columns contain data of type double.
-- Next two are to get full specification of data or suppress this message.
+::: {.callout-tip collapse="true" title="Want to know what the description means?"}
+-   The first line of the output tells you that the data set has 150
+    rows and 5 columns.
+-   The second line tells you the data is comma separated.
+-   The third line tells you to one column names "species" contains data
+    of type character.
+-   The fourth line tells you that the other four columns contain data
+    of type double.
+-   Next two are to get full specification of data or suppress this
+    message.
 :::
 
-While you will be working with your projects in R you will face different scenarios where you will need to import data from a local file.
+While you will be working with your projects in R you will face
+different scenarios where you will need to import data from a local
+file.
 
 ### Different Scenarios for Importing Data
 
-Belowa are few examples of different scenarios for importing data from a local file.
+Belowa are few examples of different scenarios for importing data from a
+local file.
 
-1. Script and Data File in the Same Directory
-If script.R and data_file.csv are in the same directory:
+1.  Script and Data File in the Same Directory If script.R and
+    data_file.csv are in the same directory:
 
-```plaintext
+``` plaintext
 project/
 ├── data_file.csv
 └── script.R
@@ -104,54 +134,51 @@ Import using:
 
 `data <- read_csv("./data_file.csv")`
 
+2.  Data File in a Subdirectory If data_file.csv is in a subdirectory:
 
-
-2. Data File in a Subdirectory
-If data_file.csv is in a subdirectory:
-
-```plaintext
+``` plaintext
 project/
 ├── data/
 │   └── data_file.csv
 └── script.R
 ```
-Import using:
 
+Import using:
 
 `data <- read_csv("./data/data_file.csv")`
 
-3. Script in a Subdirectory
-If script.R is in a subdirectory, and data_file.csv is in the parent directory:
+3.  Script in a Subdirectory If script.R is in a subdirectory, and
+    data_file.csv is in the parent directory:
 
-```plaintext
+``` plaintext
 project/
 ├── data_file.csv
 └── session/
     └── script.R
 ```
+
 Import using:
 
 `data <- read_csv("../data_file.csv")`
 
+4.  Both in Different Subdirectories If both are in different
+    subdirectories of the same parent directory:
 
-4. Both in Different Subdirectories
-If both are in different subdirectories of the same parent directory:
-
-```plaintext
+``` plaintext
 project/
 ├── data/
 │   └── data_file.csv
 └── session/
     └── script.R
 ```
+
 Import using:
 
 `data <- read_csv("../../data/data_file.csv")`
 
-5. Nested Subdirectories
-If your script is in a nested subdirectory:
+5.  Nested Subdirectories If your script is in a nested subdirectory:
 
-```plaintext
+``` plaintext
 project/
 ├── data/
 │   └── data_file.csv
@@ -159,31 +186,35 @@ project/
     └── subfolder/
         └── script.R
 ```
+
 Import using:
 
 `data <- read_csv("../../../data/data_file.csv")`
 
 Have look at the iris data with function `head()`
 
-We can use the iris data for further exploration
-load the iris data set using the data() function
+We can use the iris data for further exploration load the iris data set
+using the data() function
 
 ```{r}
 data(iris)
 ```
 
-You will see the iris data set in the environment pane. You can also use the `head()` function to view the first few rows of the data set.
+You will see the iris data set in the environment pane. You can also use
+the `head()` function to view the first few rows of the data set.
 
 ```{r}
 head(iris)
 
 ```
 
-
 **2- Importing data from web**
 
-In this section, we will learn how to import data from the web. We will use the `read_csv()` function to import data from the web. The `read_csv()` function takes the URL of the data as an argument. The URL is the location of the data on the web. The URL is a string, so it must be enclosed in quotes "".
-
+In this section, we will learn how to import data from the web. We will
+use the `read_csv()` function to import data from the web. The
+`read_csv()` function takes the URL of the data as an argument. The URL
+is the location of the data on the web. The URL is a string, so it must
+be enclosed in quotes "".
 
 ```{r}
 # URL of the dataset
@@ -194,7 +225,10 @@ penguins_data <- read_csv(url)
 
 ```
 
-In this example we first stored the web address into a variable **url**. Then we used the `read_csv()` function to read the data from **url** into R. We assigned the data to the variable **penguins_data**. We can now use the variable penguins_data to access the data.
+In this example we first stored the web address into a variable **url**.
+Then we used the `read_csv()` function to read the data from **url**
+into R. We assigned the data to the variable **penguins_data**. We can
+now use the variable penguins_data to access the data.
 
 ```{r}
 head(penguins_data)
@@ -203,18 +237,23 @@ head(penguins_data)
 
 ### Exploring the structure of imported data
 
-Understanding your dataset's structure is vital in data analysis. R offers essential functions to examine and comprehend this structure. This guide will introduce these tools, crucial for familiarizing yourself with your data before proceeding with analysis or visualization. R's functions enable effective data summarization and structural inspection.
+Understanding your dataset's structure is vital in data analysis. R
+offers essential functions to examine and comprehend this structure.
+This guide will introduce these tools, crucial for familiarizing
+yourself with your data before proceeding with analysis or
+visualization. R's functions enable effective data summarization and
+structural inspection.
 
 **Basic Functions for Data Exploration**
 
 **Viewing Data**
 
-head() and tail(): These functions show the first and last parts of your data, respectively.
+head() and tail(): These functions show the first and last parts of your
+data, respectively.
 
 ```{r}
 head(iris)
 ```
-
 
 ```{r}
 tail(iris)
@@ -223,44 +262,53 @@ tail(iris)
 
 **Summarizing Data**
 
-summary(): This function gives a quick summary of the data in each column, such as mean, median, min, max for numeric data, and frequency for categorical data.
+summary(): This function gives a quick summary of the data in each
+column, such as mean, median, min, max for numeric data, and frequency
+for categorical data.
 
 ```{r}
 summary(iris)
 ```
 
-:::{.callout-tip collapse="true" title="Want to know what the summary output means?"}
-
+::: {.callout-tip collapse="true" title="Want to know what the summary output means?"}
 These are the numerical columns of the dataset.
 
-Sepal.Length, Sepal.Width, Petal.Length, Petal.Width: 
+Sepal.Length, Sepal.Width, Petal.Length, Petal.Width:
 
 For each of these columns, the summary output shows:
 
-Min.: The smallest value in the column.
-1st Qu.: The first quartile (25th percentile), meaning 25% of the values in the column are below this number.
-Median: The middle value of the column when the values are sorted in ascending order. It divides the data into two halves.
-Mean: The average of all the values in the column.
-3rd Qu.: The third quartile (75th percentile), indicating 75% of the values are below this number.
-Max.: The largest value in the column.
-For example, for Sepal.Length, the smallest value is 4.3, the median is 6.0, and the largest value is 7.9.
+Min.: The smallest value in the column. 1st Qu.: The first quartile
+(25th percentile), meaning 25% of the values in the column are below
+this number. Median: The middle value of the column when the values are
+sorted in ascending order. It divides the data into two halves. Mean:
+The average of all the values in the column. 3rd Qu.: The third quartile
+(75th percentile), indicating 75% of the values are below this number.
+Max.: The largest value in the column. For example, for Sepal.Length,
+the smallest value is 4.3, the median is 6.0, and the largest value is
+7.9.
 
-species: This is a categorical column, as indicated by the data types Class :character and Mode :character. The summary for this kind of column is different:
+species: This is a categorical column, as indicated by the data types
+Class :character and Mode :character. The summary for this kind of
+column is different:
 
-Length: The total number of entries in the column. In this case, there are 150 species entries.
-Class and Mode: These indicate the data type of the column, which is character in this case, suggesting that the species names are text data.
-
+Length: The total number of entries in the column. In this case, there
+are 150 species entries. Class and Mode: These indicate the data type of
+the column, which is character in this case, suggesting that the species
+names are text data.
 :::
 
 **Understanding Data Structure**
 
-str(): This function displays the structure of your data, including the type of each column, the first few entries in each column, and the total number of observations.
+str(): This function displays the structure of your data, including the
+type of each column, the first few entries in each column, and the total
+number of observations.
 
 ```{r}
 str(iris)
 ```
 
-dim(): Use this to find out the dimensions of your data (number of rows and columns).
+dim(): Use this to find out the dimensions of your data (number of rows
+and columns).
 
 ```{r}
 dim(iris)
@@ -272,26 +320,36 @@ names(): This returns the names of the columns in your data.
 names(iris)
 ```
 
-class(): This function tells you the class of the data object (e.g., data.frame, matrix).
+class(): This function tells you the class of the data object (e.g.,
+data.frame, matrix).
 
 ```{r}
 class(iris)
 ```
 
-
-Practice Exercise
-Load a dataset into R (this can be any dataset of your choice, such as the built-in mtcars or iris datasets) and use the functions mentioned above to explore its structure. Write down your observations about the dataset's size, structure, and types of data it contains.
+Practice Exercise Load a dataset into R (this can be any dataset of your
+choice, such as the built-in mtcars or iris datasets) and use the
+functions mentioned above to explore its structure. Write down your
+observations about the dataset's size, structure, and types of data it
+contains.
 
 ## Excercise 8
 
-More than the above described two methods you can also use the data from R. R has some built-in datasets. You can use these datasets to practice your data analysis skills. The mtcars dataset is a classic dataset available in R, containing data extracted from the 1974 Motor Trend US magazine. It comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles.
+More than the above described two methods you can also use the data from
+R. R has some built-in datasets. You can use these datasets to practice
+your data analysis skills. The mtcars dataset is a classic dataset
+available in R, containing data extracted from the 1974 Motor Trend US
+magazine. It comprises fuel consumption and 10 aspects of automobile
+design and performance for 32 automobiles.
 
 **Tasks**
 
 1- Load the Data
 
-    - Use the data() function to load the mtcars dataset into your R environment.
-    
+```         
+- Use the data() function to load the mtcars dataset into your R environment.
+```
+
 2- View the Data
 
 3- Summarize the Data
@@ -306,13 +364,13 @@ More than the above described two methods you can also use the data from R. R ha
 
 **Questions for Reflection**
 
-- What are the dimensions of the mtcars dataset?
-- Can you identify any categorical variables in the dataset? If so, which are they?
-- What is the average (mean) value of the mpg (miles per gallon) column?
+-   What are the dimensions of the mtcars dataset?
+-   Can you identify any categorical variables in the dataset? If so,
+    which are they?
+-   What is the average (mean) value of the mpg (miles per gallon)
+    column?
 
-:::{.callout-tip collapse="true" title="Excercise 8: Click to see solution"}
-
-
+::: {.callout-tip collapse="true" title="Excercise 8: Click to see solution"}
 Solution
 
 Load the Data
@@ -321,14 +379,13 @@ Load the Data
 data(mtcars)
 ```
 
-
 View the Data
 
 To view the first few rows of the dataset, use the head() function.
+
 ```{r}
 head(mtcars)
 ```
-
 
 Summarize the Data
 
@@ -346,7 +403,6 @@ To understand the structure of the dataset, use the str() function.
 str(mtcars)
 ```
 
-
 Determine the Data Dimensions
 
 The dim() function provides the dimensions of the dataset.
@@ -355,14 +411,13 @@ The dim() function provides the dimensions of the dataset.
 dim(mtcars)
 ```
 
-
 Retrieve the Column Names
 
 Use the names() function to get the column names.
+
 ```{r}
 names(mtcars)
 ```
-
 
 Identify the Data Type
 
@@ -372,16 +427,20 @@ The class() function reveals the data type of the dataset.
 class(mtcars)
 ```
 
-
 Questions for Reflection
 
 Dimensions of the mtcars Dataset:
 
-Use dim(mtcars) to find the dimensions. The mtcars dataset has 32 rows (cars) and 11 columns (variables).
+Use dim(mtcars) to find the dimensions. The mtcars dataset has 32 rows
+(cars) and 11 columns (variables).
 
 Categorical Variables:
 
-By examining the dataset using str(mtcars) or summary(mtcars), you can identify that the mtcars dataset does not explicitly contain categorical variables as all columns are either integer or numeric. However, some variables like gear and cyl (number of gears and cylinders, respectively) can be considered as categorical in certain contexts.
+By examining the dataset using str(mtcars) or summary(mtcars), you can
+identify that the mtcars dataset does not explicitly contain categorical
+variables as all columns are either integer or numeric. However, some
+variables like gear and cyl (number of gears and cylinders,
+respectively) can be considered as categorical in certain contexts.
 
 Average Value of MPG:
 
@@ -390,25 +449,33 @@ To find the average value of the mpg column, use the mean() function.
 ```{r}
 mean(mtcars$mpg)
 ```
-
 :::
-
 
 ## Missing Data
 
-Missing data is a prevalent issue in real-world datasets, arising from various sources like data entry errors, equipment malfunctions, or participant dropout in studies. It poses challenges for many machine learning algorithms, which often require complete datasets. Thus, identifying and handling missing data is a crucial step in data analysis.
+Missing data is a prevalent issue in real-world datasets, arising from
+various sources like data entry errors, equipment malfunctions, or
+participant dropout in studies. It poses challenges for many machine
+learning algorithms, which often require complete datasets. Thus,
+identifying and handling missing data is a crucial step in data
+analysis.
 
-We will demonstrate how to identify missing data in R using the `airquality` dataset, which records daily air quality measurements in New York from May to September 1973.
+We will demonstrate how to identify missing data in R using the
+`airquality` dataset, which records daily air quality measurements in
+New York from May to September 1973.
 
-::: {.callout-tip}
-To begin, load the `airquality` dataset into your R environment using the `data(airquality)` function.
+::: callout-tip
+To begin, load the `airquality` dataset into your R environment using
+the `data(airquality)` function.
 :::
 
 ### Identifying Missing Data
 
 **Using the is.na() Function**
 
-The `is.na()` function in R helps in checking for missing values. It returns a logical vector where each value is `TRUE` if it's missing (`NA`), and `FALSE` otherwise.
+The `is.na()` function in R helps in checking for missing values. It
+returns a logical vector where each value is `TRUE` if it's missing
+(`NA`), and `FALSE` otherwise.
 
 ```{r}
 # Check for missing values in the airquality dataset
@@ -426,12 +493,15 @@ head(missing_values)
 num_missing_ozone <- sum(is.na(airquality$Ozone))
 num_missing_ozone
 ```
-function sum() is used to count the number of missing values in the Ozone column.
+
+function sum() is used to count the number of missing values in the
+Ozone column.
 
 ```{r}
 num_missing_solarR <- sum(is.na(airquality$Solar.R))
 num_missing_solarR
 ```
+
 **Counting missing values in each column**
 
 ```{r}
@@ -439,13 +509,14 @@ num_missing_solarR
 col_missing_values <- colSums(is.na(airquality))
 col_missing_values
 ```
-function colSums() is used to count the number of missing values in each column of the dataset.
+
+function colSums() is used to count the number of missing values in each
+column of the dataset.
 
 ```{r}
 # Counting the number of columns with missing values
 num_cols_missing <- sum(col_missing_values > 0)
 ```
-
 
 **Counting missing values in each row**
 
@@ -454,12 +525,12 @@ num_cols_missing <- sum(col_missing_values > 0)
 row_missing_values <- rowSums(is.na(airquality))
 ```
 
-function rowSums() is used to count the number of missing values in each row of the dataset.
+function rowSums() is used to count the number of missing values in each
+row of the dataset.
 
 ```{r}
 head(row_missing_values)
 ```
-
 
 ```{r}
 # Counting the number of rows with missing values
@@ -470,6 +541,7 @@ num_rows_missing <- sum(row_missing_values > 0)
 num_rows_missing
 
 ```
+
 ```{r}
 # Counting the number of rows with no missing values
 num_rows_complete <- sum(row_missing_values == 0)
@@ -479,16 +551,20 @@ num_rows_complete <- sum(row_missing_values == 0)
 num_rows_complete
 ```
 
-
 ### Handling Missing Data
-After identifying missing data, you can decide how to handle it. Common strategies include:
 
-1 **Removing Rows or Columns:** If a column or row has too many missing values, it might be best to exclude it from analysis.
+After identifying missing data, you can decide how to handle it. Common
+strategies include:
 
-2 **Imputing Values:** You can fill in missing values with estimates, such as the mean or median of the column.
+1 **Removing Rows or Columns:** If a column or row has too many missing
+values, it might be best to exclude it from analysis.
 
+2 **Imputing Values:** You can fill in missing values with estimates,
+such as the mean or median of the column.
 
-When a column or row in your dataset has too many missing values, it might be impractical to impute them. In such cases, you might choose to remove these rows or columns from your analysis.
+When a column or row in your dataset has too many missing values, it
+might be impractical to impute them. In such cases, you might choose to
+remove these rows or columns from your analysis.
 
 **Removing Rows**
 
@@ -499,8 +575,7 @@ To remove rows with any missing values:
 airquality_clean <- na.omit(airquality)
 ```
 
-**Removing Columns**
-To remove columns with any missing values:
+**Removing Columns** To remove columns with any missing values:
 
 ```{r}
 # Define a threshold for removal (e.g., 50% missing values)
@@ -510,19 +585,25 @@ threshold <- 0.5 * nrow(airquality)
 airquality_clean <- airquality[, colSums(is.na(airquality)) < threshold]
 ```
 
-**Imputing Values**
-Instead of removing missing data, another approach is to fill in the missing values with estimates. This process is known as imputation. Common methods include using the mean, median, or a predictive model to estimate the missing values.
+**Imputing Values** Instead of removing missing data, another approach
+is to fill in the missing values with estimates. This process is known
+as imputation. Common methods include using the mean, median, or a
+predictive model to estimate the missing values.
 
 Imputing with Mean or Median
+
 ```{r}
 # Impute missing values in the Ozone column with the mean
 airquality$Ozone[is.na(airquality$Ozone)] <- mean(airquality$Ozone, na.rm = TRUE)
 ```
 
-Alternatively, you can use the median, which is less sensitive to outliers:
+Alternatively, you can use the median, which is less sensitive to
+outliers:
+
 ```{r}
 # Impute missing values in the Ozone column with the median
 airquality$Ozone[is.na(airquality$Ozone)] <- median(airquality$Ozone, na.rm = TRUE)
 ```
 
-```{r}
+\`\`\`{r}
+
