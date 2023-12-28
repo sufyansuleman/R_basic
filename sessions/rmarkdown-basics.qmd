@@ -7,6 +7,44 @@ source(here::here("R/functions.R"))
 source(here::here("R/load-packages.R"))
 ```
 
+## What is R Markdown?
+
+-   R Markdown is a file format for making dynamic documents with R. An
+    R Markdown document is written in markdown (an easy-to-write plain
+    text format) and contains chunks of embedded R code.
+
+-   The R Markdown is then processed by the knitr package, which
+    executes all of the R code chunks and creates a new markdown (.md)
+    document which includes the code and its output. This markdown
+    document can then be rendered into a variety of formats including
+    HTML, PDF, MS Word, scientific articles, websites, and more. You can
+    even use R Markdown to build interactive documents and slideshows.
+
+-   R Markdown documents are fully reproducible and support dozens of
+    static and dynamic output formats. When you use R Markdown, you'll
+    have the opportunity to flex your creativity and your technical
+    skills. The possibilities are nearly endless.
+
+-   R Markdown is a variant of Markdown that has embedded R code chunks,
+    to be used with knitr to make it easy to create reproducible
+    web-based reports. R Markdown files are designed to be used with the
+    RStudio IDE, allowing you to quickly create documents and
+    presentations that are fully reproducible.
+
+## What is R Script?
+
+-   R Script is a plain-text file that contains R code that you intend
+    to use again later - to run the same analysis, to re-create a plot,
+    etc. Unlike an R Markdown document, an R Script does not contain
+    text in addition to the R code. It's simply a list of commands that
+    you would otherwise enter at the R command prompt. R Scripts are a
+    great way to ensure that your analyses are reproducible. They also
+    make it easy to re-use your code in other projects and share your
+    code with others. R script files are designed to be used with the
+    RStudio IDE, allowing you to quickly create documents and
+    presentations that are fully reproducible. In this course we will
+    work with R Markdown files.
+
 ## Creat an R Markdown file
 
 In this section, you will learn how to create a new R Markdown file, and
