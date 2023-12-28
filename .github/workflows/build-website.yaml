@@ -23,7 +23,7 @@ jobs:
 
       - name: Install R packages
         run: |
-          install.packages("rmarkdown")
+          Rscript -e "install.packages('rmarkdown')"
           # Add any other packages your project depends on
 
 
