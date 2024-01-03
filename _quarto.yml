@@ -4,7 +4,11 @@ project:
 book:
   title: "Getting Started with R"
   subtitle: "An Introduction to R and RStudio for beginners"
-  author: "Sufyan Suleman"
+  author:
+    - name: "Sufyan Suleman"
+      affiliation: "Novo Nordisk Foundation Center for Basic Metabolic Research, University of Copenhagen Denmark"
+    - name: "Asmat Ullah"
+      affiliation: "Department of Biomedicine, Faculty of Health, Aarhus University Denmark"
   chapters:
   - index.qmd
   - part: "Programme"
@@ -25,6 +29,8 @@ book:
   appendices:
     - LICENSE.md
     - appendix/references.qmd
+    - appendix/discussion.qmd
+    - appendix/acknowledgements.qmd
   page-footer:
     center:
       - text: "License: CC BY 4.0"

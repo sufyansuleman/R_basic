@@ -1,4 +1,4 @@
-# Discussion {#discussion .unnumbered}
+# Discussion {#sec-discussion}
 
 As you get started with R, the role of your network becomes increasingly
 important both for continued learning, but also for collaboration with
