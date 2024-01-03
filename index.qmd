@@ -1,29 +1,66 @@
-
 # Course overview {.unnumbered}
 
-This course is specifically designed for those new to R, aiming to facilitate a transition from software platforms like `STATA` or `Excel`. It's an introductory course, ideal for beginners without prior R experience. If you're already acquainted with R, this course may revisit concepts you know, but you're welcome to take for a fundamentals refresher. While it's not a comprehensive guide to R and RStudio, nor a course on statistics, data analysis, programming, or computer science, it provides a solid foundation in R and RStudio for beginners. Keep an eye out for our future courses on basic statistical analysis and data manipulation.
+# Course Overview {.unnumbered}
+
+This course is designed for individuals transitioning from platforms
+like STATA or Excel to R. It's an ideal starting point for beginners,
+covering basic R concepts and offering a strong foundation in R and
+RStudio. While not delving into advanced programming or statistical
+analysis, it sets the stage for further exploration in R.
+
+## What You Will Learn {.unnumbered}
+
+You'll learn R and RStudio fundamentals, including syntax, operations,
+and R Markdown. The course covers handling R data structures for
+analysis and guides you through installing R and RStudio, along with
+managing R packages.
+
+## What You Will Not Learn {.unnumbered}
+
+This course focuses on foundational skills in R, not covering advanced
+programming or complex data analysis. It aims to build your comfort with
+R, preparing you for future learning in these areas.
+
+## Why Choose R? {.unnumbered}
+
+R is more than a programming language; it's a gateway to advanced data
+analysis across various fields. Its superior statistical capabilities,
+flexibility in handling large data sets, and a vast package ecosystem
+make it an essential skill for researchers and professionals across all
+domains. Whether you're in finance, healthcare, academia, or any field
+that relies on data, R equips you with the power to make informed
+decisions and uncover insights from data. By learning R, you're not just
+gaining a skill, you're opening doors to a multitude of opportunities in
+data-driven fields. If you are comfortable with Excel and STATA, you'll
+find R to be a natural progression but with more power, flexibility and
+a larger community.
 
 # Aims {#Aims}
 
-1. Introduce R and RStudio to learners.
-2. Guide through R and RStudio installation, including R package management.
-3. Teach essential R syntax, operations, and R Markdown usage.
-4. Equip learners to handle R data structures for analysis tasks.
-5. Engage and actively involve learners throughout the course.
-
+1.  Introduce R and RStudio to learners.
+2.  Guide through R and RStudio installation, including R package
+    management.
+3.  Learn essential R syntax, operations, and R Markdown usage.
+4.  Equip learners to handle R data structures for analysis tasks.
+5.  Engage and **actively involve** learners throughout the course.
 
 # Learning Objectives {#Learning-Objectives}
 
-Upon successful completion of this course, you'll gain proficiency in R programming with these key abilities:
+Upon successful completion of this course, you'll gain proficiency in R
+with these key abilities:
 
-1. Understand R's fundamentals and the RStudio IDE.
-2. Install R and RStudio effortlessly.
-3. Master R syntax, including variables, vectors, and basic operations.
-4. Utilize R Markdown for documentation.
-5. Handle vectors effectively and explore data frames and lists.
-6. Navigate R packages: installation, loading, and usage.
-7. Acquire skills in data import, visualization, and accessing help in RStudio.
+1.  Understand R's fundamentals and the RStudio IDE.
+2.  Install R and RStudio effortlessly.
+3.  Master R syntax, including variables, vectors, and basic operations.
+4.  Utilize R Markdown for documentation.
+5.  Handle vectors effectively and explore data frames and lists.
+6.  Navigate R packages: installation, loading, and usage.
+7.  Acquire skills in data import, visualization, and accessing help in
+    RStudio.
 
 # Prerequisites {#Prerequisites}
 
-You would need a computer with an internet connection to access the course material. You can use any operating system (Windows, Mac, or Linux) to follow along with the course. However, we recommend using a Windows or Mac computer for the best experience. You'll also need to install R and RStudio on your computer. We'll cover this in the next section.
+You would need a computer with a stable internet connection to access
+the course material. You can use any operating system (Windows, Mac, or
+Linux) to follow along with the course. However, we recommend using a
+Windows or Mac computer for the best experience.
