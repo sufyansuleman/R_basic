@@ -39,7 +39,6 @@ editor:
 format:
   html:
     include-after-body:
-      - "includes/contribute.html"
       - "includes/site-counter.html"
     theme: "cosmo"
 
