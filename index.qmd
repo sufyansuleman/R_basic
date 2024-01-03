@@ -1,25 +1,32 @@
-# Course overview {.unnumbered}
-
 # Course Overview {.unnumbered}
 
-This course is designed for individuals transitioning from platforms
-like STATA or Excel to R. It's an ideal starting point for beginners,
-covering basic R concepts and offering a strong foundation in R and
-RStudio. While not delving into advanced programming or statistical
-analysis, it sets the stage for further exploration in R.
+Welcome to a journey that will transform your data analysis skills and
+perspective. This course is a bridge from traditional platforms like
+STATA or Excel to the vibrant and dynamic world of R programming.
+Tailored for beginners, it offers a comprehensive introduction to R and
+RStudio, empowering you with essential skills and knowledge. We focus on
+building a strong foundation in R, enabling you to grasp its core
+concepts and functionalities. This course is your first step towards
+advanced programming and statistical analysis in R, setting you up for a
+world of opportunities and deeper exploration in this powerful
+programming language.
 
 ## What You Will Learn {.unnumbered}
 
-You'll learn R and RStudio fundamentals, including syntax, operations,
-and R Markdown. The course covers handling R data structures for
-analysis and guides you through installing R and RStudio, along with
-managing R packages.
+-   Grasp the fundamentals of R and RStudio.
+-   Learn to do effective data documentation in R.
+-   Understand and manage data using R's data structures.
+-   Navigate through the installation and package management in R.
+-   Import and visualize data.
+-   How to get help.
 
 ## What You Will Not Learn {.unnumbered}
 
-This course focuses on foundational skills in R, not covering advanced
-programming or complex data analysis. It aims to build your comfort with
-R, preparing you for future learning in these areas.
+-   Intermediate or Advanced R programming.
+-   Complex data analysis.
+-   Statistical analysis.
+-   Machine learning.
+-   For these topics please look at our other upcoming courses.
 
 ## Why Choose R? {.unnumbered}
 
@@ -38,29 +45,27 @@ a larger community.
 # Aims {#Aims}
 
 1.  Introduce R and RStudio to learners.
-2.  Guide through R and RStudio installation, including R package
+2.  Guide through R and RStudio installation, including package
     management.
-3.  Learn essential R syntax, operations, and R Markdown usage.
-4.  Equip learners to handle R data structures for analysis tasks.
-5.  Engage and **actively involve** learners throughout the course.
+3.  Teach essential R syntax, operations, and R Markdown usage.
+4.  Equip learners to manage R data structures for analysis.
+5.  Actively engage learners throughout the course.
 
 # Learning Objectives {#Learning-Objectives}
 
-Upon successful completion of this course, you'll gain proficiency in R
-with these key abilities:
+Upon completing this course, you'll gain proficiency in:
 
-1.  Understand R's fundamentals and the RStudio IDE.
-2.  Install R and RStudio effortlessly.
-3.  Master R syntax, including variables, vectors, and basic operations.
-4.  Utilize R Markdown for documentation.
-5.  Handle vectors effectively and explore data frames and lists.
-6.  Navigate R packages: installation, loading, and usage.
-7.  Acquire skills in data import, visualization, and accessing help in
-    RStudio.
+1.  R fundamentals and the RStudio IDE.
+2.  Effortless installation of R and RStudio.
+3.  Mastery of R syntax: variables, vectors, and operations.
+4.  Utilization of R Markdown for documentation.
+5.  Effective handling of vectors and exploration of data frames and
+    lists.
+6.  Navigation of R packages: installation, loading, and usage.
+7.  Skills in data import, visualization, and accessing help in RStudio.
 
 # Prerequisites {#Prerequisites}
 
-You would need a computer with a stable internet connection to access
-the course material. You can use any operating system (Windows, Mac, or
-Linux) to follow along with the course. However, we recommend using a
-Windows or Mac computer for the best experience.
+A computer with a stable internet connection is required. Any operating
+system (Windows, Mac, or Linux) is suitable, but Windows or Mac is
+recommended for the best experience.
