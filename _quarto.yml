@@ -7,6 +7,9 @@ book:
   author: "Sufyan Suleman"
   chapters:
   - index.qmd
+  - part: "Programme"
+    chapters:
+    - programme/schedule.qmd
   - part: "Sessions"
     chapters:
     - sessions/introduction.qmd
