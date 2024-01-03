@@ -1,4 +1,4 @@
-# Acknowledgements {#sec-acknowledgements}
+# Acknowledgements
 
 This course was inspired by **Luke W. Johnston** and **Anders Askeland**
 R-cubed's courses, in collaboration with the Danish Diabetes and

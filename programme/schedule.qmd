@@ -1,9 +1,9 @@
-# Schedule {#sec-schedule}
+# Schedule {#sec .unnumbered}
 
 This course marks the beginning of a series of R courses, combining
 live-coding sessions with practical exercises and teamwork, using
 real-world data. Lectures are primarily at the beginning followed by a
-code along sessions and excercies. The schedule provided is an
+code along sessions and exercises. The schedule provided is an
 **approximate guide**, not a strict timetable, as session lengths may
 vary. This flexible format is designed to adapt to the content and
 interactive elements of the course.
