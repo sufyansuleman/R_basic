@@ -14,11 +14,11 @@ interactive elements of the course.
 #| echo: false
 #| output: asis
 library(dplyr)
-add_link <- function(text, link) {
+add_link <- function(text, icon, link) {
   colour <- "#138d75"
-  added_link <- paste0("<i class='fa-solid fa-", "' style='color:", colour, "'></i>&nbsp;&nbsp;<a href=\"", link, "\">", text, "</a>")
+  added_link <- paste0("<i class='fa-solid fa-", icon, "' style='color:", colour, "'></i>&nbsp;&nbsp;<a href=\"", link, "\">", text, "</a>")
   if (link == "") {
-    added_link <- paste0("<i class='fa-solid fa-", "' style='color:", colour, "'></i>&nbsp;&nbsp;", text)
+    added_link <- paste0("<i class='fa-solid fa-", icon, "' style='color:", colour, "'></i>&nbsp;&nbsp;", text)
   }
   return(htmltools::HTML(added_link))
 }
@@ -27,11 +27,11 @@ schedule <- here::here("programme/schedule.csv") %>%
   readr::read_csv(col_types = "ccccc") %>%
   mutate(across(everything(), ~ if_else(is.na(.x), "", .x))) %>%
   mutate(
-    `Session topic` = list(`Session topic`, link) %>%
+    `Session topic` = list(`Session topic`, icon, link) %>%
       purrr::pmap(~ add_link(..1, ..2, ..3)) %>%
       unlist()
   ) %>%
-  select( -link)
+  select(-icon, -link)
 
 unique(schedule$Day) %>%
   purrr::map_chr(\(day) {
